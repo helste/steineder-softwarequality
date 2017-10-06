@@ -1,2 +1,2 @@
 # steineder-softwarequality
-Simple Mockito example
+Contains source code used for lectures
