@@ -17,26 +17,31 @@
 		classname="edu.umd.cs.findbugs.anttask.FindBugsTask" 
 		classpathref="classpath"/>
 	
-	<target name="all" depends="clean,init,findbugs"/>
+	<target name="all" depends="clean,init,compile,findbugs"/>
 	
 	<target name="init">
+		<mkdir dir="${findbugs.build}"/>
 	</target>
 
+    <target name="compile" depends="init">
+        <javac srcdir="${findbugs.src}" destdir="${findbugs.build}"/>
+    </target>
+
 	<target name="clean">
-		<delete file="${findbugs.output.file}" failonerror="false"/>	
+		<delete dir="${findbugs.reports}" failonerror="false"/>
 	</target>
 	
 	
 	<target name="findbugs" depends="init">
 		<findbugs 
 			home="${findbugs.home}" 
-			output="${findbugs.output.format}" 
-			outputFile="${findbugs.output.file}" >
+			output="${findbugs.reports.format}"
+			outputFile="${findbugs.reports}/findbugs-report.${findbugs.reports.format}">
 			<!--
 			<auxClasspath path="${basedir}/lib/Regex.jar" />
 			-->
-			<sourcePath path="${findbugs.src}"/>
-			<sourcePath path="${findbugs.test}"/>
+            <sourcepath path="${findbugs.src}"/>
+			<sourcepath path="${findbugs.test}"/>
 	      	<class location="${findbugs.build}"/>
 	    </findbugs>
 	</target>
