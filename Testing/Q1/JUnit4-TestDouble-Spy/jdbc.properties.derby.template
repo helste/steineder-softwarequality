@@ -1,0 +1,6 @@
+#
+# Using Derby inmemory database.
+#
+
+jdbc.url=jdbc:derby:memory:testdb;create=true
+
