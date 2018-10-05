@@ -3,16 +3,15 @@ working steps
 
 * initial run analyze in IDEA found
 ** semicolon --> removed
-** removed meaningless comments (Readablity)
+** removed meaningless comments (Dispensables.Comments)
 ** ArrayList --> List<Article>  (Type Safety)
 
 ** replace old style loop with foreach (Readablity)
 
-* (Data Class) --> Encapsulate fields
+* Article (Dispensables.Data Class) --> Encapsulate fields
 ** change access scope of attributes
 
 ** replaced string concat + with append (Performance)
-
 
 * (Duplicate Code)
 ** Extract Method (to increase Readability)
@@ -22,7 +21,7 @@ working steps
 * (FeatureEnvy)
 ** Move Method getCart... to Article. toString/toXML
 
-* (Temporary Field)
+* Article.author (Temporary Field)
 ** Extract class
 
 * (Switch Statements) +

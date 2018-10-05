@@ -61,11 +61,11 @@ public class ShoppingCartTest
 		String s = cart.toXml();		
 		
 		final String EXPECTED = 
-				"<shoppingcard id=\"0\">\n" +
+				"<shoppingcart id=\"0\">\n" +
 				"	<cd id=\"1\" description=\"Rolling Stones\" price=\"12.99\"/>\n" +
 				"	<book id=\"7\" description=\"Refactoring\" price=\"57.8\" author=\"Martin Fowler\"/>\n" +
 				"	<dvd id=\"13\" description=\"ACDC Live\" price=\"24.9\"/>\n" +
-				"</shoppingcard>";
+				"</shoppingcart>";
 		
 		Assert.assertEquals(EXPECTED, s);
 	}
