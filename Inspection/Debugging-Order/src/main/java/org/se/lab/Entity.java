@@ -2,9 +2,6 @@ package org.se.lab;
 
 public abstract class Entity
 {
-	/*
-	 * Property: id:int
-	 */
 	private int id;
 	public int getId()
 	{
@@ -17,18 +14,19 @@ public abstract class Entity
 		this.id = id;
 	}
 
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Entity other = (Entity) obj;
-		if (id != other.id)
-			return false;
-		return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
+
+		Entity entity = (Entity) obj;
+
+		return id == entity.id;
+	}
+
+	@Override
+	public int hashCode() {
+		return id;
 	}
 }
