@@ -17,8 +17,8 @@ public class LoginPageTest {
 
    @Before
    public void setUp() throws Exception {
-      driver = new ChromeDriver();
-//        driver = new FirefoxDriver();
+//      driver = new ChromeDriver();
+        driver = new FirefoxDriver();
 
       page = new LoginPage(driver, "http://localhost:8080", 30);
    }
