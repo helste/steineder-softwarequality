@@ -13,12 +13,16 @@ public class LoginServiceImpl implements LoginService {
 	private ConcurrentMap<String, String> table = new ConcurrentHashMap<String, String>();
 
 	public LoginServiceImpl() {
-		table.put("student", "cd73502828457d15655bbd7a63fb0bc8");
-		table.put("homer", "dfa8327f5bfa4c672a04f9b38e348a70");
-		table.put("marge", "f450b9ea18bf7d82dad122f729c0935f");
-		table.put("bart", "f54146a3fc82ab17e5265695b23f646b");
-		table.put("lisa", "ed14f4a4d7ecddb6dae8e54900300b1e");
-		table.put("maggie", "1d3d37667a8d7eb02054c6afdf9e2e1c");
+		try {
+			table.put("student", calculateMd5String("student"));
+			table.put("homer", calculateMd5String("homer"));
+			table.put("marge", calculateMd5String("marge"));
+			table.put("bart", calculateMd5String("bart"));
+			table.put("lisa", calculateMd5String("lisa"));
+			table.put("maggie", calculateMd5String("maggie"));
+		} catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override

@@ -1,0 +1,36 @@
+Preconditions
+* Newest Firefox
+* Katalon Recorder Addon installed
+* Gecko Driver installed and in PATH
+
+
+#Aufgabe 1
+* Analyse LoginPageTest
+
+#Aufgabe 2
+Record following scenario as CurrencyConverter Test Case
+
+Feature:
+As User I want to get the EUR -> USD conversion rate for 100 EUR.
+
+Converter URL: https://www.currency-calc.com/EUR_USD
+
+Scenario
+Given I opened the conversion page for EUR to USD
+When I type 100 into the EUR field
+Then I get the correct conversion rate
+
+
+Implementation hint for verification in Then ...
+Switch fields by clicking on USD field
+Check that value behind equal sign below the fields is "€ 100"
+
+Export scenario to Java Code
+
+Run Test Code
+
+Refactor to Page Object Pattern
+
+
+
+
