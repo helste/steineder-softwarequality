@@ -1,4 +1,4 @@
-Exercise: BadSmells + Refactoring
+Exercise: CodeSmells + Refactoring
 ---------------------------------------------------------------------
 
 Die vorliegenden Klassen "Article" und "ShoppingCart" weisen einige 
