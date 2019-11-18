@@ -4,13 +4,13 @@ import org.junit.Before;
 
 public class AddOrderTest
 {
-	private Order order;
+	private OrderService order;
 	
 	
 	@Before
 	public void setup()
 	{
-		order = new Order();		
+		order = new OrderService();
 		
 	}
 	

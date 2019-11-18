@@ -2,6 +2,8 @@ package org.se.lab;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,13 +11,14 @@ import org.junit.Test;
 
 public class SetOrderIdTest
 {
-	private Order order;
-	
+	private OrderService order;
+	private Logger logger = Logger.getLogger(getClass().getCanonicalName());
+
 	
 	@Before
 	public void setup()
 	{
-		order = new Order();		
+		order = new OrderService();
 		
 	}
 
@@ -141,8 +144,7 @@ public class SetOrderIdTest
 	@Test
 	public void testOrderId()
 	{
-		Map<String, IllegalArgumentException> idTestCases = 
-				new HashMap<String, IllegalArgumentException>();
+		Map<String, IllegalArgumentException> idTestCases = new HashMap<>();
 		
 		idTestCases.put("00", null);
 		idTestCases.put("99", null);
@@ -162,18 +164,18 @@ public class SetOrderIdTest
 	
 	public void runOrderIdTestCases(Map<String, IllegalArgumentException> testCases)
 	{
-		for(String s : testCases.keySet())
+		for(Map.Entry<String, IllegalArgumentException> testCase : testCases.entrySet())
 		{
 			try
 			{
-				System.out.println("test case: value = " + s + "\n");
-				order.setOrderId(s);
-				if(testCases.get(s) != null)
+				logger.log(Level.INFO,"test case: value = {0}\n", testCase.getKey());
+				order.setOrderId(testCase.getKey());
+				if(testCases.get(testCase.getValue()) != null)
 					Assert.fail();
 			}
 			catch(IllegalArgumentException e)
 			{
-				Assert.assertEquals(testCases.get(s).getMessage(), e.getMessage());
+				Assert.assertEquals(testCase.getValue().getMessage(), e.getMessage());
 			}
 		}
 	}
