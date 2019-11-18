@@ -44,7 +44,7 @@ public class Blog
 		
 		try
 		{
-			List<Post> result = new ArrayList<Post>();
+			List<Post> result = new ArrayList<>();
 			List<Post> posts;
 
 			posts = table.findAll();
