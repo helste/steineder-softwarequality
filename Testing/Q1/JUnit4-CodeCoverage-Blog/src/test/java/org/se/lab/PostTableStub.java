@@ -8,7 +8,7 @@ public class PostTableStub
 	implements PostTable
 {
 	// Simulate DB table
-	protected List<Post> posts = new ArrayList<Post>();
+	protected List<Post> posts = new ArrayList<>();
 	
 	// Simulate a SQL Exception
 	// Note that for checked exceptions we have to handle the concrete

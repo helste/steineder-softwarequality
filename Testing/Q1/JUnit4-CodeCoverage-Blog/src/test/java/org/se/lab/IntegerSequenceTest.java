@@ -1,21 +1,20 @@
 package org.se.lab;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 public class IntegerSequenceTest
 {
 
-	/*
-	 * Note that the compiler generates a default constructor, so we have to
-	 * test it too :-)
-	 * 
-	 * In classes with only static methods we make the constructor private 
-	 * (or at least protected) to prevent clients from using such a constructor.
-	 */
-	@Test
-	public void testSequence()
-	{
-		@SuppressWarnings("unused")
-		IntegerSequence dummy = new IntegerSequence();
-	}
+    @Test
+    public void testSequence()
+    {
+        IntegerSequence.setValue(100);
+        assertEquals(100, IntegerSequence.nextValue());
+        assertEquals(101, IntegerSequence.nextValue());
+
+        IntegerSequence.setValue(200);
+        assertEquals(200, IntegerSequence.nextValue());
+    }
 }

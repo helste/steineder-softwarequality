@@ -1,6 +1,6 @@
 package org.se.lab;
 
-public class Order
+public class OrderService
 {
 	public void setOrderId(String id)
 	{

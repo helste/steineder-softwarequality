@@ -6,12 +6,12 @@ public class IntegerSequence
 	
 	private static int sequence = 1;
 	
-	synchronized public static int nextValue()
+	public static synchronized int nextValue()
 	{
 		return sequence++;
 	}
 	
-	synchronized public static void setValue(int value)
+	public static synchronized void setValue(int value)
 	{
 		sequence = value;
 	}
